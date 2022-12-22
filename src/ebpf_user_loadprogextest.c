@@ -782,11 +782,13 @@ int main()
 	printf("target: %s len: %d\n", target, str_len);
 	printf("attach: %d\n", bpf_prog_attach(target, str_len, bpf_fd));
 
-	printf("busy loop");
-	while (1) {
-		printf("try open");
+	int n = 2;
+	printf("busy loop for %d times\n", n);
+	while (n) {
+		printf("open called from user\n");
 		int fd = open("./ebpf_user_maptest", O_RDONLY);
 		sleep(1000);
+		n--;
 	}
 	return 0;
 }

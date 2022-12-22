@@ -139,5 +139,6 @@ int bpf_prog_load_ex(void *prog, uint32_t prog_size,
 		     struct bpf_map_fd_entry *map_array,
 		     uint32_t map_array_len);
 int bpf_prog_attach(const char *target, uint32_t str_len, int fd);
+int bpf_prog_detach(int fd);
 
 #endif // __LIBS_BPF_H__
