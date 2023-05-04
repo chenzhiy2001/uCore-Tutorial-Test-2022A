@@ -242,3 +242,17 @@ int enable_deadlock_detect(int enabled)
 {
 	return syscall(SYS_enable_deadlock_detect, enabled);
 }
+
+int uart1_read()
+{
+	return syscall(4000);
+}
+
+int uart1_write(unsigned char c)
+{
+	return syscall(4001,c);
+}
+
+void uart1_flush(){
+	syscall(4002);
+}
