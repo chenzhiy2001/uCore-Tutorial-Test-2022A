@@ -776,7 +776,7 @@ int main()
 	printf("load ex: %x\n", bpf_fd);
 	// const char *target =
 	// "kprobe:_RNvMNtNtCs6EJUG5qC0e6_5rcore7syscall4procNtB4_7Syscall8sys_fork";
-
+	//  uprobe$initproc$<SomeCrate>::some_fn_name
 	const char *target = "kprobe$<linux_syscall::Syscall>::sys_openat";
 	uint32_t str_len = strlen(target);
 	printf("target: %s len: %d\n", target, str_len);
